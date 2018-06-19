@@ -14,10 +14,11 @@ function changeParity(scramble){
     
     switch (scramble[scramble.length - 1]){
         case "'":
+            return scramble.substring(0, scramble.length-1) + "2";
         case "2":
             return scramble.substring(0, scramble.length-1);
         default:
-            return scramble + "'";
+            return scramble + "2";
     }
 }
 
@@ -31,7 +32,9 @@ function generateScrambles(amount, mode){
                 if (parity(scramble)){
                     scrambles.push(scramble);
                 }
-                
+                else {
+                    scrambles.push(changeParity(scramble))
+                }
             }
         case 'forceNoParity':
             while (scrambles.length < amount){
@@ -39,6 +42,9 @@ function generateScrambles(amount, mode){
                 if (!parity(scramble)){
                     scrambles.push(scramble);
                     
+                } 
+                else {
+                    scrambles.push(changeParity(scramble))
                 }
             }
         case 'indicate':
@@ -67,4 +73,12 @@ function displayScrambles(){
     textArea.focus()
     textArea.setSelectionRange(0, scrambles.length)
     
+}
+
+function logParities(){
+    var scrambles = document.getElementById("scrambles").value.split("\n");
+    var i = 0
+    for(; i < scrambles.length; i++){
+        console.log(parity(scrambles[i]))
+    }
 }

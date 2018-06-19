@@ -5,15 +5,15 @@
 <body>
     
     <input type="number" id="amount" value="50"><br>
-    <select id="mode">
+    <select id="mode" size=3>
         <option value="forceParity">Force Parity</option>
         <option value="indicate">Indicate Parity</option>
         <option value="forceNoParity">Force No Parity</option>
-    </select>
+    </select><br>
     
     <button onclick="displayScrambles()">Generate</button><br>
     
-    <textarea id="scrambles" rows="5" cols="90"></textarea>
+    <textarea id="scrambles" cols=80 rows="20"></textarea>
     <script src="js/alg_jison.js"></script>
     <script src="js/alg.js"></script>
     <script src="js/scramble_333.js"></script>
