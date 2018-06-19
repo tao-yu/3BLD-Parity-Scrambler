@@ -22,6 +22,7 @@ function changeParity(scramble){
 }
 
 function generateScrambles(amount, mode){
+    var textArea = document.getElementById("scrambles").value;
     var scrambles = [];
     switch (mode){
         case 'forceParity':
@@ -30,12 +31,14 @@ function generateScrambles(amount, mode){
                 if (parity(scramble)){
                     scrambles.push(scramble);
                 }
+                
             }
         case 'forceNoParity':
             while (scrambles.length < amount){
                 var scramble = get333scramble();
                 if (!parity(scramble)){
                     scrambles.push(scramble);
+                    
                 }
             }
         case 'indicate':
@@ -58,4 +61,10 @@ function displayScrambles(){
     var mode = e.options[e.selectedIndex].value;
     
     var scrambles = generateScrambles(amount, mode).join("\n");
+    
+    var textArea = document.getElementById("scrambles");
+    textArea.value = scrambles;
+    textArea.focus()
+    textArea.setSelectionRange(0, scrambles.length)
+    
 }
