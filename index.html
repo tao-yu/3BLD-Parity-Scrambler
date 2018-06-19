@@ -3,7 +3,20 @@
     <title>3BLD parity scrambler</title>
 </head>
 <body>
-    <script src="scramble_222.js"></script>
-    <script src="parityScrambler.js"></script>
+    
+    <input type="number" id="amount" value="50"><br>
+    <select id="mode">
+        <option value="forceParity">Force Parity</option>
+        <option value="forceNoParity">Force No Parity</option>
+        <option value="indicate">Indicate Parity</option>
+    </select>
+    
+    <button onclick="displayScrambles()">Generate</button><br>
+    
+    <textarea id="scrambles" rows="5" cols="90"></textarea>
+    <script src="js/alg_jison.js"></script>
+    <script src="js/alg.js"></script>
+    <script src="js/scramble_333.js"></script>
+    <script src="js/parityScrambler.js"></script>
 </body>
 </html>
