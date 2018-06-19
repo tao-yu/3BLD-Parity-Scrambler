@@ -76,8 +76,14 @@ function displayScrambles(){
     var textArea = document.getElementById("scrambles");
     
     textArea.value = scrambles;
-    textArea.focus()
-    textArea.setSelectionRange(0, scrambles.length)
+    selectScrambles()
+    
+}
+
+function selectScrambles(){
+    var textArea = document.getElementById("scrambles");
+    textArea.focus();
+    textArea.select();
     
 }
 
