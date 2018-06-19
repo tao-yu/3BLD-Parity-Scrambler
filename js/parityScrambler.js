@@ -62,13 +62,19 @@ function generateScrambles(amount, mode){
 }
 
 function displayScrambles(){
+    
     var amount = parseInt(document.getElementById("amount").value);
     var e = document.getElementById("mode");
+    if (e.selectedIndex == -1){
+        alert("Please select a scramble mode");
+        return;
+    }
     var mode = e.options[e.selectedIndex].value;
     
     var scrambles = generateScrambles(amount, mode).join("\n");
     
     var textArea = document.getElementById("scrambles");
+    
     textArea.value = scrambles;
     textArea.focus()
     textArea.setSelectionRange(0, scrambles.length)

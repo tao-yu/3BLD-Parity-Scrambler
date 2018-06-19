@@ -3,18 +3,41 @@
         <title>3BLD parity scrambler</title>
         <style>
             h2, ol li { font-family: Sans-Serif }
+            button {
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+            select {
+                overflow-y: auto;
+            }
+            #amount {
+                width:60px;
+            }
         </style>
     </head>
     <body>
 
-        <input type="number" id="amount" value="50"><br>
+        <input type="number" id="amount" value="100" step="10">
+        
+        <br><br>
+        
         <select id="mode" size=3>
-            <option value="forceParity">Force Parity</option>
+            <option value="forceParity" selected="selected">Force Parity</option>
             <option value="indicate">Indicate Parity</option>
             <option value="forceNoParity">Force No Parity</option>
-        </select><br>
+        </select>
+        
+        <br><br>
 
-        <button onclick="displayScrambles()">Generate</button><br>
+        <button onclick="displayScrambles()" id="generate">Generate</button>
+        
+        <br><br>
 
         <textarea id="scrambles" cols=80 rows="20"></textarea>
         <script src="js/alg_jison.js"></script>
