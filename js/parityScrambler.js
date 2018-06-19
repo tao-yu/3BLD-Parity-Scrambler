@@ -1,8 +1,18 @@
 
-scramblers["333"].initialize()
+scramblers["333"].initialize();
+
+var myStorage = window.localStorage;
+
+if (myStorage.getItem("amount") == null){
+    document.getElementById("amount").value = 50;
+} else {
+    document.getElementById("amount").value = parseInt(myStorage.getItem("amount"));
+}
 function get333scramble(){
     return scramblers["333"].getRandomScramble().scramble_string;
 }
+
+
 
 function parity(scramble){
     var qtm = alg.cube.countMoves(scramble, {metric:"obqtm"})

@@ -2,7 +2,7 @@
     <head>
         <title>3BLD parity scrambler</title>
         <style>
-            h2, ol li { font-family: Sans-Serif }
+            html { font-family: Sans-Serif }
             button {
                 background-color: #4CAF50; /* Green */
                 border: none;
@@ -22,8 +22,8 @@
         </style>
     </head>
     <body>
-
-        <input type="number" id="amount" value="100" step="10">
+        Number of Scrambles:
+        <input type="number" id="amount" step="10" onchange="myStorage.setItem('amount', this.value);" min="1">
         
         <br><br>
         
