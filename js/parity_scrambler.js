@@ -73,7 +73,7 @@ function generateScrambles(amount, mode){
                 var x = Math.round(Math.random());
                 if (x){
                     scramble += "U R U R' U R U2 R'";
-                    scramble = alg.cube.simplify(scramble);
+                    scramble = obfusticate(scramble);
                     scrambles.push(scramble);
                 } else {
                     scrambles.push(scramble);
