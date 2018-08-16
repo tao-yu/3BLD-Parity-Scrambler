@@ -1,5 +1,5 @@
 
-scramblers["333"].initialize();
+scramblers['333'].initialize(null, Math);
 
 var myStorage = window.localStorage;
 
@@ -9,7 +9,7 @@ if (myStorage.getItem("amount") == null){
     document.getElementById("amount").value = parseInt(myStorage.getItem("amount"));
 }
 function get333scramble(){
-    return scramblers["333"].getRandomScramble().scramble_string;
+    return scramblers["333"].getRandomScramble();
 }
 
 
@@ -65,6 +65,18 @@ function generateScrambles(amount, mode){
                 }
                 else {
                     scrambles.push("(np) " + scramble);
+                }
+            }
+        case 'cornersOnlyUFUR':
+            while (scrambles.length < amount){
+                var scramble = scramblers["333"].getCornerScramble();
+                var x = Math.round(Math.random());
+                if (x){
+                    scramble += "U R U R' U R U2 R'";
+                    scramble = alg.cube.simplify(scramble);
+                    scrambles.push(scramble);
+                } else {
+                    scrambles.push(scramble);
                 }
             }
     }

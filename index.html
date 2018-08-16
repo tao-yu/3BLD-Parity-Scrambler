@@ -27,10 +27,11 @@
         
         <br><br>
         
-        <select id="mode" size=3>
+        <select id="mode" size=4>
             <option value="forceParity" selected="selected">Force Parity</option>
             <option value="indicate">Indicate Parity</option>
             <option value="forceNoParity">Force No Parity</option>
+            <option value="cornersOnlyUFUR">Corners Only, UFUR</option>
         </select>
         
         <br><br>
@@ -42,7 +43,7 @@
         <textarea id="scrambles" cols=80 rows="20" onclick="selectScrambles()" readonly="readonly"></textarea>
         <script src="js/alg_jison.js"></script>
         <script src="js/alg.js"></script>
-        <script src="js/scramble_333.js"></script>
+        <script src="js/scramble_333_edit.js"></script>
         <script src="js/parityScrambler.js"></script>
         <h2>How to import scrambles into cstimer</h2>
         <ol>
