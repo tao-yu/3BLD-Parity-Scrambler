@@ -79,6 +79,18 @@ function generateScrambles(amount, mode){
                     scrambles.push(scramble);
                 }
             }
+        case 'edgesOnlyUFRUBR':
+            while (scrambles.length < amount){
+                var scramble = scramblers["333"].getEdgeScramble();
+                var x = Math.round(Math.random());
+                if (x){
+                    scramble += "R U2 R' U' R U2 L' U R' U' L";
+                    scramble = obfusticate(scramble);
+                    scrambles.push(scramble);
+                } else {
+                    scrambles.push(scramble);
+                }
+            }
     }
     return scrambles;
 }
